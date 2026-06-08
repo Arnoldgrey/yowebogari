@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — Arnold's online shopping</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><span class="logo-icon">N</span> Name-E-Shopping</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="register.html" class="btn btn-sm btn-outline">Register</a>
+        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-page">
+    <div class="auth-card">
+      <h2>Welcome Back</h2>
+      <p class="subtitle">Sign in to your Name-E-Shopping account</p>
+
+      <div class="role-tabs">
+        <button class="role-tab active" data-role="customer">Customer</button>
+        <button class="role-tab" data-role="seller">Seller</button>
+        <button class="role-tab" data-role="admin">Admin</button>
+      </div>
+
+      <!-- Customer Login -->
+      <form class="role-form" data-role="customer" data-toast="Welcome back, Customer!">
+        <div class="form-group">
+          <label for="cust-email">Email Address</label>
+          <input type="email" id="cust-email" class="form-control" required placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label for="cust-pass">Password</label>
+          <input type="password" id="cust-pass" class="form-control" required placeholder="Enter your password">
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+          <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem;">
+            <input type="checkbox"> Remember me
+          </label>
+          <a href="#" style="font-size: 0.9rem;">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Login as Customer</button>
+      </form>
+
+      <!-- Seller Login -->
+      <form class="role-form" data-role="seller" style="display: none;" data-toast="Welcome, Seller! Redirecting to dashboard...">
+        <div class="alert alert-info">Sellers can upload product photos, documents, and set store location.</div>
+        <div class="form-group">
+          <label for="seller-email">Seller Email</label>
+          <input type="email" id="seller-email" class="form-control" required placeholder="seller@store.com">
+        </div>
+        <div class="form-group">
+          <label for="seller-pass">Password</label>
+          <input type="password" id="seller-pass" class="form-control" required placeholder="Enter your password">
+        </div>
+        <div class="form-group">
+          <label for="store-id">Store ID</label>
+          <input type="text" id="store-id" class="form-control" placeholder="Your unique store identifier">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;" formaction="seller-dashboard.html">Login as Seller</button>
+      </form>
+
+      <!-- Admin Login -->
+      <form class="role-form" data-role="admin" style="display: none;" data-toast="Admin access granted.">
+        <div class="alert alert-info">Admin access is restricted to authorized personnel only.</div>
+        <div class="form-group">
+          <label for="admin-email">Admin Email</label>
+          <input type="email" id="admin-email" class="form-control" required placeholder="admin@name-e-shopping.com">
+        </div>
+        <div class="form-group">
+          <label for="admin-pass">Password</label>
+          <input type="password" id="admin-pass" class="form-control" required placeholder="Enter admin password">
+        </div>
+        <div class="form-group">
+          <label for="admin-code">Security Code</label>
+          <input type="text" id="admin-code" class="form-control" required placeholder="Two-factor code">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;" formaction="admin-dashboard.html">Login as Admin</button>
+      </form>
+
+      <div class="auth-footer">
+        Don't have an account? <a href="register.html">Register here</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom"><p>&copy; 2026 Name-E-Shopping. All rights reserved.</p></div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

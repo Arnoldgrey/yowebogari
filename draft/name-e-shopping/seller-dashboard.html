@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seller Dashboard — Arnold's online shopping</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><span class="logo-icon">N</span> Name-E-Shopping</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <span class="badge badge-seller">Seller</span>
+        <a href="login.html" class="btn btn-sm btn-outline">Logout</a>
+        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h3>AudioTech Store</h3>
+        <p>📍 New York, USA</p>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="seller-dashboard.html" class="active"><span class="nav-icon">📊</span> Dashboard</a>
+        <a href="#add-product"><span class="nav-icon">➕</span> Add Product</a>
+        <a href="#my-products"><span class="nav-icon">📦</span> My Products</a>
+        <a href="#upload-docs"><span class="nav-icon">📄</span> Documents</a>
+        <a href="#location"><span class="nav-icon">📍</span> Set Location</a>
+        <a href="#orders"><span class="nav-icon">🛒</span> Orders</a>
+        <a href="index.html"><span class="nav-icon">🏠</span> Back to Store</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard-main">
+      <div class="dashboard-header">
+        <div>
+          <h1>Seller Dashboard</h1>
+          <p class="text-muted">Manage your products, uploads, and store location</p>
+        </div>
+        <a href="#add-product" class="btn btn-primary">+ Add New Product</a>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <p class="stat-label">Total Products</p>
+          <p class="stat-value">24</p>
+          <p class="stat-change">+3 this month</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-label">Total Orders</p>
+          <p class="stat-value">156</p>
+          <p class="stat-change">+12 this week</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-label">Revenue</p>
+          <p class="stat-value">$4,280</p>
+          <p class="stat-change">+8% vs last month</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-label">Avg. Rating</p>
+          <p class="stat-value">4.8 ★</p>
+          <p class="stat-change">Based on 89 reviews</p>
+        </div>
+      </div>
+
+      <!-- Add Product -->
+      <div class="panel" id="add-product">
+        <div class="panel-header">
+          <h3>Add New Product</h3>
+        </div>
+        <div class="panel-body">
+          <form data-toast="Product added successfully!">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="p-name">Product Name</label>
+                <input type="text" id="p-name" class="form-control" required placeholder="Enter product name">
+              </div>
+              <div class="form-group">
+                <label for="p-price">Price ($)</label>
+                <input type="number" id="p-price" class="form-control" required placeholder="0.00" step="0.01">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="p-desc">Description</label>
+              <textarea id="p-desc" class="form-control" placeholder="Describe your product..."></textarea>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="p-category">Category</label>
+                <select id="p-category" class="form-control">
+                  <option>Electronics</option>
+                  <option>Fashion</option>
+                  <option>Home &amp; Garden</option>
+                  <option>Sports</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="p-stock">Stock Quantity</label>
+                <input type="number" id="p-stock" class="form-control" placeholder="0" min="0">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Upload Product Photos</label>
+              <div class="upload-area">
+                <input type="file" accept="image/*" multiple>
+                <div class="upload-icon">📷</div>
+                <p><strong>Click or drag photos here</strong></p>
+                <p class="text-muted">PNG, JPG up to 5MB each. Upload multiple angles.</p>
+              </div>
+              <div class="preview-grid"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Publish Product</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Upload Documents -->
+      <div class="panel" id="upload-docs">
+        <div class="panel-header">
+          <h3>Upload Related Documents</h3>
+        </div>
+        <div class="panel-body">
+          <form data-toast="Documents uploaded successfully!">
+            <div class="form-group">
+              <label for="doc-product">Select Product</label>
+              <select id="doc-product" class="form-control">
+                <option>Wireless Headphones</option>
+                <option>Bluetooth Speaker</option>
+                <option>Smart Watch Pro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="doc-type">Document Type</label>
+              <select id="doc-type" class="form-control">
+                <option>Product Manual</option>
+                <option>Warranty Certificate</option>
+                <option>Specification Sheet</option>
+                <option>Safety Guide</option>
+                <option>Invoice Template</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Upload Document</label>
+              <div class="upload-area">
+                <input type="file" accept=".pdf,.doc,.docx,.xls,.xlsx">
+                <div class="upload-icon">📄</div>
+                <p><strong>Click or drag document here</strong></p>
+                <p class="text-muted">PDF, DOC, DOCX, XLS up to 10MB</p>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload Document</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Set Location -->
+      <div class="panel" id="location">
+        <div class="panel-header">
+          <h3>Set Store Location</h3>
+        </div>
+        <div class="panel-body">
+          <form data-toast="Store location updated!">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="loc-address">Street Address</label>
+                <input type="text" id="loc-address" class="form-control" value="456 Audio Lane">
+              </div>
+              <div class="form-group">
+                <label for="loc-city">City</label>
+                <input type="text" id="loc-city" class="form-control" value="New York">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="loc-state">State / Province</label>
+                <input type="text" id="loc-state" class="form-control" value="NY">
+              </div>
+              <div class="form-group">
+                <label for="loc-country">Country</label>
+                <select id="loc-country" class="form-control">
+                  <option selected>United States</option>
+                  <option>United Kingdom</option>
+                  <option>Canada</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="loc-zip">ZIP / Postal Code</label>
+              <input type="text" id="loc-zip" class="form-control" value="10001">
+            </div>
+            <div class="location-map">
+              📍 Map Preview — New York, NY 10001, USA
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Save Location</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- My Products -->
+      <div class="panel" id="my-products">
+        <div class="panel-header">
+          <h3>My Products</h3>
+          <a href="#add-product" class="btn btn-sm btn-outline">+ Add New</a>
+        </div>
+        <div class="panel-body" style="padding: 0;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Wireless Headphones</strong></td>
+                <td>$89.99</td>
+                <td>45</td>
+                <td>New York, USA</td>
+                <td><span class="status status-active">Active</span></td>
+                <td><button class="btn btn-sm btn-outline">Edit</button></td>
+              </tr>
+              <tr>
+                <td><strong>Bluetooth Speaker</strong></td>
+                <td>$59.99</td>
+                <td>30</td>
+                <td>New York, USA</td>
+                <td><span class="status status-active">Active</span></td>
+                <td><button class="btn btn-sm btn-outline">Edit</button></td>
+              </tr>
+              <tr>
+                <td><strong>USB-C Cable Pack</strong></td>
+                <td>$12.99</td>
+                <td>0</td>
+                <td>New York, USA</td>
+                <td><span class="status status-inactive">Out of Stock</span></td>
+                <td><button class="btn btn-sm btn-outline">Edit</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Orders -->
+      <div class="panel" id="orders">
+        <div class="panel-header">
+          <h3>Recent Orders</h3>
+        </div>
+        <div class="panel-body" style="padding: 0;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Product</th>
+                <th>Amount</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#ORD-0345</td>
+                <td>John D.</td>
+                <td>Wireless Headphones</td>
+                <td>$89.99</td>
+                <td><span class="status status-pending">Processing</span></td>
+              </tr>
+              <tr>
+                <td>#ORD-0341</td>
+                <td>Sarah M.</td>
+                <td>Bluetooth Speaker</td>
+                <td>$59.99</td>
+                <td><span class="status status-active">Shipped</span></td>
+              </tr>
+              <tr>
+                <td>#ORD-0338</td>
+                <td>Mike R.</td>
+                <td>Wireless Headphones</td>
+                <td>$179.98</td>
+                <td><span class="status status-active">Delivered</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

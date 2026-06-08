@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Downloads — Arnold's online shopping</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><span class="logo-icon">A</span> Arnold's online shopping</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="order.html">Order</a>
+        <a href="downloads.html" class="active">Downloads</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="cart.html" class="btn btn-sm btn-outline cart-badge">🛒 <span class="cart-count">0</span></a>
+        <a href="login.html" class="btn btn-sm btn-primary">Login</a>
+        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>My Downloads</h1>
+      <p>Access product manuals, warranties, and digital files from your purchases</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Downloads</div>
+
+      <div class="alert alert-info mb-3">
+        <strong>Customer Downloads:</strong> After placing an order, all related product documents become available here for download.
+      </div>
+
+      <div class="download-list">
+        <div class="download-item">
+          <div class="download-info">
+            <div class="file-icon">📄</div>
+            <div>
+              <strong>Wireless Headphones — Product Manual</strong>
+              <p class="text-muted">PDF · 2.4 MB · Purchased Mar 15, 2026</p>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="showToast('Downloading Product Manual...')">Download</button>
+        </div>
+
+        <div class="download-item">
+          <div class="download-info">
+            <div class="file-icon">📋</div>
+            <div>
+              <strong>Wireless Headphones — Warranty Certificate</strong>
+              <p class="text-muted">PDF · 0.8 MB · Purchased Mar 15, 2026</p>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="showToast('Downloading Warranty Certificate...')">Download</button>
+        </div>
+
+        <div class="download-item">
+          <div class="download-info">
+            <div class="file-icon">🖼️</div>
+            <div>
+              <strong>Smart Watch Pro — Setup Guide</strong>
+              <p class="text-muted">PDF · 1.2 MB · Purchased Feb 28, 2026</p>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="showToast('Downloading Setup Guide...')">Download</button>
+        </div>
+
+        <div class="download-item">
+          <div class="download-info">
+            <div class="file-icon">📦</div>
+            <div>
+              <strong>Running Shoes — Size Chart</strong>
+              <p class="text-muted">PNG · 0.3 MB · Purchased Jan 10, 2026</p>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="showToast('Downloading Size Chart...')">Download</button>
+        </div>
+
+        <div class="download-item">
+          <div class="download-info">
+            <div class="file-icon">🧾</div>
+            <div>
+              <strong>Order Receipt #ORD-2026-0342</strong>
+              <p class="text-muted">PDF · 0.5 MB · Mar 15, 2026</p>
+            </div>
+          </div>
+          <button class="btn btn-outline btn-sm" onclick="showToast('Downloading Receipt...')">Download</button>
+        </div>
+      </div>
+
+      <div class="text-center mt-3">
+        <p class="text-muted">Need a file that's not listed? <a href="contact.html">Contact support</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom"><p>&copy; 2026 Name-E-Shopping. All rights reserved.</p></div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register — Arnold's online shopping</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><span class="logo-icon">N</span> Name-E-Shopping</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-sm btn-primary">Login</a>
+        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-page">
+    <div class="auth-card" style="max-width: 520px;">
+      <h2>Create Account</h2>
+      <p class="subtitle">Join Name-E-Shopping as a customer or seller</p>
+
+      <div class="role-tabs">
+        <button class="role-tab active" data-role="customer">Customer</button>
+        <button class="role-tab" data-role="seller">Seller</button>
+      </div>
+
+      <!-- Customer Registration -->
+      <form class="role-form" data-role="customer" data-toast="Account created! Welcome to Name-E-Shopping.">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="c-fname">First Name</label>
+            <input type="text" id="c-fname" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="c-lname">Last Name</label>
+            <input type="text" id="c-lname" class="form-control" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="c-email">Email Address</label>
+          <input type="email" id="c-email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="c-pass">Password</label>
+          <input type="password" id="c-pass" class="form-control" required>
+          <p class="form-hint">Minimum 8 characters with a number and symbol</p>
+        </div>
+        <div class="form-group">
+          <label for="c-confirm">Confirm Password</label>
+          <input type="password" id="c-confirm" class="form-control" required>
+        </div>
+        <label style="display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.9rem; margin-bottom: 1.25rem;">
+          <input type="checkbox" required style="margin-top: 0.3rem;">
+          I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+        </label>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Create Customer Account</button>
+      </form>
+
+      <!-- Seller Registration -->
+      <form class="role-form" data-role="seller" style="display: none;" data-toast="Seller account created! Set up your store.">
+        <div class="alert alert-info">As a seller, you can upload product photos, documents, and set your store location.</div>
+        <div class="form-group">
+          <label for="s-name">Store / Business Name</label>
+          <input type="text" id="s-name" class="form-control" required placeholder="Your store name">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="s-fname">Owner First Name</label>
+            <input type="text" id="s-fname" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="s-lname">Owner Last Name</label>
+            <input type="text" id="s-lname" class="form-control" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="s-email">Business Email</label>
+          <input type="email" id="s-email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="s-location">Store Location</label>
+          <input type="text" id="s-location" class="form-control" required placeholder="City, Country">
+        </div>
+        <div class="form-group">
+          <label for="s-pass">Password</label>
+          <input type="password" id="s-pass" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="s-doc">Business Document (optional)</label>
+          <input type="file" id="s-doc" class="form-control" accept=".pdf,.doc,.docx">
+          <p class="form-hint">Upload business license or registration document</p>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Create Seller Account</button>
+      </form>
+
+      <div class="auth-footer">
+        Already have an account? <a href="login.html">Login here</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom"><p>&copy; 2026 Name-E-Shopping. All rights reserved.</p></div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

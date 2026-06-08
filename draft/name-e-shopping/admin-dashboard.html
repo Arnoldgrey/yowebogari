@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — Arnold's online shopping</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><span class="logo-icon">N</span> Name-E-Shopping</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <span class="badge badge-admin">Admin</span>
+        <a href="login.html" class="btn btn-sm btn-outline">Logout</a>
+        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h3>Admin Panel</h3>
+        <p>System Management</p>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="admin-dashboard.html" class="active"><span class="nav-icon">📊</span> Overview</a>
+        <a href="#users"><span class="nav-icon">👥</span> Users</a>
+        <a href="#sellers"><span class="nav-icon">🏪</span> Sellers</a>
+        <a href="#products"><span class="nav-icon">📦</span> Products</a>
+        <a href="#reviews"><span class="nav-icon">⭐</span> Reviews</a>
+        <a href="#orders"><span class="nav-icon">🛒</span> Orders</a>
+        <a href="#settings"><span class="nav-icon">⚙️</span> Settings</a>
+        <a href="index.html"><span class="nav-icon">🏠</span> View Site</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard-main">
+      <div class="dashboard-header">
+        <div>
+          <h1>Admin Dashboard</h1>
+          <p class="text-muted">Monitor and manage the Name-E-Shopping marketplace</p>
+        </div>
+        <span class="text-muted">Last updated: Jun 6, 2026</span>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <p class="stat-label">Total Users</p>
+          <p class="stat-value">15,420</p>
+          <p class="stat-change">+245 this month</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-label">Active Sellers</p>
+          <p class="stat-value">842</p>
+          <p class="stat-change">+18 new sellers</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-label">Total Products</p>
+          <p class="stat-value">2,567</p>
+          <p class="stat-change">+89 this week</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-label">Total Revenue</p>
+          <p class="stat-value">$128K</p>
+          <p class="stat-change">+15% vs last month</p>
+        </div>
+      </div>
+
+      <!-- Users Management -->
+      <div class="panel" id="users">
+        <div class="panel-header">
+          <h3>User Management</h3>
+          <button class="btn btn-sm btn-primary">Export Data</button>
+        </div>
+        <div class="panel-body" style="padding: 0;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Joined</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>John Doe</strong></td>
+                <td>john@example.com</td>
+                <td><span class="badge badge-customer">Customer</span></td>
+                <td>Jan 2026</td>
+                <td><span class="status status-active">Active</span></td>
+                <td><button class="btn btn-sm btn-outline">View</button></td>
+              </tr>
+              <tr>
+                <td><strong>Sarah Miller</strong></td>
+                <td>sarah@store.com</td>
+                <td><span class="badge badge-seller">Seller</span></td>
+                <td>Dec 2025</td>
+                <td><span class="status status-active">Active</span></td>
+                <td><button class="btn btn-sm btn-outline">View</button></td>
+              </tr>
+              <tr>
+                <td><strong>Mike Roberts</strong></td>
+                <td>mike@example.com</td>
+                <td><span class="badge badge-customer">Customer</span></td>
+                <td>Feb 2026</td>
+                <td><span class="status status-pending">Pending</span></td>
+                <td><button class="btn btn-sm btn-outline">View</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Sellers -->
+      <div class="panel" id="sellers">
+        <div class="panel-header">
+          <h3>Seller Accounts</h3>
+        </div>
+        <div class="panel-body" style="padding: 0;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Store Name</th>
+                <th>Owner</th>
+                <th>Location</th>
+                <th>Products</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>AudioTech Store</strong></td>
+                <td>James Audio</td>
+                <td>📍 New York, USA</td>
+                <td>24</td>
+                <td><span class="status status-active">Verified</span></td>
+                <td><button class="btn btn-sm btn-outline">Manage</button></td>
+              </tr>
+              <tr>
+                <td><strong>Fashion Hub</strong></td>
+                <td>Lisa Chen</td>
+                <td>📍 Paris, France</td>
+                <td>56</td>
+                <td><span class="status status-active">Verified</span></td>
+                <td><button class="btn btn-sm btn-outline">Manage</button></td>
+              </tr>
+              <tr>
+                <td><strong>SportZone</strong></td>
+                <td>Ken Tanaka</td>
+                <td>📍 Tokyo, Japan</td>
+                <td>18</td>
+                <td><span class="status status-pending">Pending Review</span></td>
+                <td><button class="btn btn-sm btn-primary">Approve</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Products -->
+      <div class="panel" id="products">
+        <div class="panel-header">
+          <h3>Product Listings</h3>
+        </div>
+        <div class="panel-body" style="padding: 0;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Seller</th>
+                <th>Price</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Wireless Headphones</strong></td>
+                <td>AudioTech Store</td>
+                <td>$89.99</td>
+                <td>New York, USA</td>
+                <td><span class="status status-active">Live</span></td>
+                <td><button class="btn btn-sm btn-outline">Edit</button></td>
+              </tr>
+              <tr>
+                <td><strong>Leather Handbag</strong></td>
+                <td>Fashion Hub</td>
+                <td>$75.00</td>
+                <td>Paris, France</td>
+                <td><span class="status status-active">Live</span></td>
+                <td><button class="btn btn-sm btn-outline">Edit</button></td>
+              </tr>
+              <tr>
+                <td><strong>Counterfeit Watch</strong></td>
+                <td>Unknown Seller</td>
+                <td>$25.00</td>
+                <td>—</td>
+                <td><span class="status status-inactive">Flagged</span></td>
+                <td><button class="btn btn-sm btn-outline" style="color: var(--danger);">Remove</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Reviews Moderation -->
+      <div class="panel" id="reviews">
+        <div class="panel-header">
+          <h3>Review Moderation</h3>
+        </div>
+        <div class="panel-body">
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer">
+                <div class="avatar">LP</div>
+                <div><strong>Lisa P.</strong> — Leather Handbag<br><span class="text-muted">★★★☆☆ · Flagged: inappropriate language</span></div>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <button class="btn btn-sm btn-primary">Approve</button>
+                <button class="btn btn-sm btn-outline" style="color: var(--danger);">Remove</button>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer">
+                <div class="avatar">JD</div>
+                <div><strong>John D.</strong> — Wireless Headphones<br><span class="text-muted">★★★★★ · Quality: Excellent</span></div>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <button class="btn btn-sm btn-primary">Approve</button>
+                <button class="btn btn-sm btn-outline" style="color: var(--danger);">Remove</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Orders -->
+      <div class="panel" id="orders">
+        <div class="panel-header">
+          <h3>All Orders</h3>
+        </div>
+        <div class="panel-body" style="padding: 0;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Seller</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#ORD-0345</td>
+                <td>John D.</td>
+                <td>AudioTech Store</td>
+                <td>$89.99</td>
+                <td>Jun 5, 2026</td>
+                <td><span class="status status-pending">Processing</span></td>
+              </tr>
+              <tr>
+                <td>#ORD-0342</td>
+                <td>Sarah M.</td>
+                <td>Fashion Hub</td>
+                <td>$199.00</td>
+                <td>Jun 3, 2026</td>
+                <td><span class="status status-active">Shipped</span></td>
+              </tr>
+              <tr>
+                <td>#ORD-0330</td>
+                <td>Ahmed K.</td>
+                <td>SportZone</td>
+                <td>$129.50</td>
+                <td>May 28, 2026</td>
+                <td><span class="status status-active">Delivered</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Settings -->
+      <div class="panel" id="settings">
+        <div class="panel-header">
+          <h3>Site Settings</h3>
+        </div>
+        <div class="panel-body">
+          <form data-toast="Settings saved successfully!">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="site-name">Site Name</label>
+                <input type="text" id="site-name" class="form-control" value="Name-E-Shopping">
+              </div>
+              <div class="form-group">
+                <label for="support-email">Support Email</label>
+                <input type="email" id="support-email" class="form-control" value="support@name-e-shopping.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="site-desc">Site Description</label>
+              <textarea id="site-desc" class="form-control">Your friendly online marketplace for buying and selling quality products.</textarea>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>
+                  <input type="checkbox" checked> Allow new seller registrations
+                </label>
+              </div>
+              <div class="form-group">
+                <label>
+                  <input type="checkbox" checked> Require review moderation
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Settings</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

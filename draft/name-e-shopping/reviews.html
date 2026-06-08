@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Reviews — Arnold's online shopping</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><span class="logo-icon">A</span>Arnold's online shopping</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="order.html">Order</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="reviews.html" class="active">Reviews</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="cart.html" class="btn btn-sm btn-outline cart-badge">🛒 <span class="cart-count">0</span></a>
+        <a href="login.html" class="btn btn-sm btn-primary">Login</a>
+        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Product Reviews</h1>
+      <p>Share your experience and help others make informed decisions</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="align-items: start;">
+        <div>
+          <h2 style="margin-bottom: 1.5rem;">Customer Reviews</h2>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer">
+                <div class="avatar">JD</div>
+                <div><strong>John D.</strong> <span class="badge badge-customer">Customer</span><br><span class="text-muted">Wireless Headphones · March 2026</span></div>
+              </div>
+              <span class="star-rating">★★★★★</span>
+            </div>
+            <p><strong>Quality:</strong> Excellent</p>
+            <p>Sound quality is outstanding. Noise cancellation works perfectly in busy environments. Worth every penny.</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer">
+                <div class="avatar">SM</div>
+                <div><strong>Sarah M.</strong> <span class="badge badge-customer">Customer</span><br><span class="text-muted">Smart Watch Pro · February 2026</span></div>
+              </div>
+              <span class="star-rating">★★★★☆</span>
+            </div>
+            <p><strong>Quality:</strong> Very Good</p>
+            <p>Great features and battery life. The strap could be more comfortable for all-day wear, but overall a solid purchase.</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer">
+                <div class="avatar">AK</div>
+                <div><strong>Ahmed K.</strong> <span class="badge badge-customer">Customer</span><br><span class="text-muted">Running Shoes · January 2026</span></div>
+              </div>
+              <span class="star-rating">★★★★★</span>
+            </div>
+            <p><strong>Quality:</strong> Excellent</p>
+            <p>Lightweight and comfortable for long runs. Great grip and cushioning. Delivered faster than expected!</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer">
+                <div class="avatar">LP</div>
+                <div><strong>Lisa P.</strong> <span class="badge badge-customer">Customer</span><br><span class="text-muted">Leather Handbag · December 2025</span></div>
+              </div>
+              <span class="star-rating">★★★☆☆</span>
+            </div>
+            <p><strong>Quality:</strong> Average</p>
+            <p>Nice design but the leather feels thinner than expected. Color is slightly different from the photo.</p>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 2rem; position: sticky; top: 100px;">
+          <h3 style="margin-bottom: 0.5rem;">Write a Review</h3>
+          <p class="text-muted mb-3">Comment on product quality after your purchase</p>
+
+          <form data-toast="Thank you! Your review has been submitted.">
+            <div class="form-group">
+              <label for="r-product">Product</label>
+              <select id="r-product" class="form-control" required>
+                <option value="">Select a product</option>
+                <option>Wireless Headphones</option>
+                <option>Smart Watch Pro</option>
+                <option>Running Shoes</option>
+                <option>Leather Handbag</option>
+                <option>Skincare Set</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Overall Rating</label>
+              <div class="star-rating" style="font-size: 1.8rem;">
+                <input type="radio" name="rating" id="star5" value="5"><label for="star5">★</label>
+                <input type="radio" name="rating" id="star4" value="4"><label for="star4">★</label>
+                <input type="radio" name="rating" id="star3" value="3"><label for="star3">★</label>
+                <input type="radio" name="rating" id="star2" value="2"><label for="star2">★</label>
+                <input type="radio" name="rating" id="star1" value="1"><label for="star1">★</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="r-quality">Product Quality</label>
+              <select id="r-quality" class="form-control" required>
+                <option value="">Rate the quality</option>
+                <option>Excellent</option>
+                <option>Very Good</option>
+                <option>Good</option>
+                <option>Average</option>
+                <option>Poor</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="r-title">Review Title</label>
+              <input type="text" id="r-title" class="form-control" placeholder="Summarize your experience" required>
+            </div>
+
+            <div class="form-group">
+              <label for="r-comment">Your Comment</label>
+              <textarea id="r-comment" class="form-control" placeholder="Tell others about the product quality, delivery, and your overall experience..." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="r-photo">Upload Photo (optional)</label>
+              <input type="file" id="r-photo" class="form-control" accept="image/*">
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Review</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom"><p>&copy; 2026 Name-E-Shopping. All rights reserved.</p></div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
